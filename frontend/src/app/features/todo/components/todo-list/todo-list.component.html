@@ -1,14 +1,15 @@
 <div class="todo-list">
-  <h2 class="todo-list__title">{{ title }}</h2>
   <div *ngIf="toDos.length > 0; else noToDos" class="todo-list__items">
     <app-todo-item
       *ngFor="let toDo of toDos"
       [toDo]="toDo"
-      (deleteToDo)="onDelete(toDo.id)"
+      (removeTodo)="onRemove(toDo.id)"
     ></app-todo-item>
   </div>
 
   <ng-template #noToDos>
-    <span class="todo-list--empty">Nenhuma tarefa encontrada.</span>
+    <span class="todo-list--empty">
+      {{ emptyList | translate }}
+    </span>
   </ng-template>
 </div>

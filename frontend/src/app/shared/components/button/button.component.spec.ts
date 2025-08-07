@@ -21,12 +21,12 @@ describe('ButtonComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set button class to button--delete', () => {
-    const type = ButtonTypeEnum.Delete;
+  it('should set button class to button--remove', () => {
+    const type = ButtonTypeEnum.Remove;
     component.type = type;
     component.ngOnInit();
 
-    expect(component.buttonClass).toBe('button--delete');
+    expect(component.buttonClass).toBe('button--remove');
   });
 
   it('should set button class to button--create', () => {

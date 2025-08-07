@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { ButtonTypeEnum } from './button.enum';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })

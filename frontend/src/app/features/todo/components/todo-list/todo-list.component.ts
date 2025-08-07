@@ -1,23 +1,25 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 
-import { ToDo } from '../../../../core/models/todo.model';
+import { Todo } from '../../../../core/models/todo.model';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [CommonModule, TodoItemComponent],
+  imports: [CommonModule, TodoItemComponent, TranslatePipe],
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent {
-  @Input({ required: true }) toDos: ToDo[] = [];
+  @Input({ required: true }) toDos: Todo[] = [];
 
-  readonly title = 'Tarefas'; // ToDo: botar no i18n
+  @Output() removeTodo = new EventEmitter<number>();
 
-  onDelete(id: number): void {
-    // ToDo: implementar delete
-    console.log(`Deletar: `, id);
+  readonly emptyList = 'emptyList';
+
+  onRemove(id: number): void {
+    this.removeTodo.emit(id);
   }
 }

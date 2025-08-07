@@ -1,5 +1,10 @@
 <div class="todo-container">
-  <h1 class="todo-container__title">{{ title }}</h1>
+  <h1 class="todo-container__title">{{ title | translate }}</h1>
   <app-todo-add-form [form]="todoForm" (add)="addTodo()"></app-todo-add-form>
-  <app-todo-list [toDos]="toDos"></app-todo-list>
+
+  <h2 class="todo-container__list-title">{{ listTitle | translate }}</h2>
+  <app-todo-list
+    [toDos]="todos"
+    (removeTodo)="removeTodo($event)"
+  ></app-todo-list>
 </div>

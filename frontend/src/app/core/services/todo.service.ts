@@ -2,22 +2,23 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { ToDo } from '../models/todo.model';
+import { Todo } from '../models/todo.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root', // ToDo: explicar o motivo do providedIn: 'root'
+  providedIn: 'root',
 })
 export class TodoService {
-  private apiUrl = 'http://localhost:8000/tarefas'; // ToDo: jogar isso no environment
+  private readonly apiUrl = environment.apiUrl;
 
   constructor(private readonly httpClient: HttpClient) {}
 
-  getTodoList(): Observable<ToDo[]> {
-    return this.httpClient.get<ToDo[]>(this.apiUrl);
+  getTodoList(): Observable<Todo[]> {
+    return this.httpClient.get<Todo[]>(this.apiUrl);
   }
 
-  addTodo(todo: ToDo): Observable<ToDo> {
-    return this.httpClient.post<ToDo>(this.apiUrl, todo);
+  addTodo(todo: Todo): Observable<Todo> {
+    return this.httpClient.post<Todo>(this.apiUrl, todo);
   }
 
   removeTodo(id: number): Observable<void> {

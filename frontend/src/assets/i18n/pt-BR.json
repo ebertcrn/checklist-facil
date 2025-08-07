@@ -1,0 +1,15 @@
+{
+  "title": "Todo List",
+  "listTitle": "Lista de Tarefas",
+  "addTodoPlaceholder": "Digite uma nova tarefa",
+  "emptyList": "Nenhuma tarefa encontrada.",
+  "btnLabels": {
+    "add": "Adicionar",
+    "remove": "Remover"
+  },
+  "errors": {
+    "loadingTodos": "Erro ao carregar tarefas",
+    "addingTodo": "Erro ao adicionar tarefa",
+    "removeTodo": "Erro ao remover tarefa"
+  }
+}

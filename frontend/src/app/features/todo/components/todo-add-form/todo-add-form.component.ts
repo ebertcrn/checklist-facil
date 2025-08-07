@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { ButtonTypeEnum } from '../../../../shared/components/button/button.enum';
@@ -7,31 +8,24 @@ import { ButtonTypeEnum } from '../../../../shared/components/button/button.enum
 @Component({
   selector: 'app-todo-add-form',
   standalone: true,
-  imports: [ReactiveFormsModule, ButtonComponent],
+  imports: [ReactiveFormsModule, ButtonComponent, TranslatePipe],
   templateUrl: './todo-add-form.component.html',
   styleUrls: ['./todo-add-form.component.scss'],
 })
-export class TodoAddFormComponent implements OnInit {
+export class TodoAddFormComponent {
   @Input({ required: true }) form!: FormGroup;
 
   @Output() add = new EventEmitter<void>();
 
-  readonly label = 'Adicionar'; // ToDo: i18n
+  readonly label = 'btnLabels.add';
   readonly type = ButtonTypeEnum.Create;
-  readonly placeholder = 'Digite uma nova tarefa';
-
-  ngOnInit(): void {}
+  readonly placeholder = 'addTodoPlaceholder';
 
   get titleControl(): FormControl<string> {
     return this.form.get('title') as FormControl<string>;
   }
 
   addTodo(): void {
-    if (!this.form.valid) {
-      return;
-    }
-
     this.add.emit();
-    this.form.reset();
   }
 }
