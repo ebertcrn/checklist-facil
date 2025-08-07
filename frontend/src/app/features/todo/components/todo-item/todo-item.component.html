@@ -1,10 +1,21 @@
 <div class="item">
-  <span [ngClass]="{ 'item--completed': toDo.completed }">
-    {{ toDo.title }}
+  <span [ngClass]="{ 'item--completed': todo.completed }">
+    {{ todo.title }}
   </span>
-  <app-button
-    [label]="label"
-    [type]="type"
-    (onClick)="onRemove(toDo.id)"
-  ></app-button>
+
+  <div class="item__buttons">
+    <app-button
+      *ngIf="!todo.completed"
+      [label]="completeLabel"
+      [type]="createType"
+      [icon]="checkIcon"
+      (onClick)="onHandleTodo(todo.id, createType)"
+    ></app-button>
+    <app-button
+      [label]="removeLabel"
+      [type]="removeType"
+      [icon]="trashIcon"
+      (onClick)="onHandleTodo(todo.id, removeType)"
+    ></app-button>
+  </div>
 </div>

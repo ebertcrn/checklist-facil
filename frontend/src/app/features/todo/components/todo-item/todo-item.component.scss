@@ -1,9 +1,16 @@
 .item {
   align-items: center;
   border: 1px solid #ddd;
+  border-radius: 4px;
   display: flex;
   justify-content: space-between;
   padding: 10px;
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
 
   &--completed {
     text-decoration: line-through;

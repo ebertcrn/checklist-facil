@@ -21,6 +21,12 @@ export class TodoService {
     return this.httpClient.post<Todo>(this.apiUrl, todo);
   }
 
+  completeTodo(id: number): Observable<Todo> {
+    return this.httpClient.post<Todo>(`${this.apiUrl}/${id}`, {
+      completed: true,
+    });
+  }
+
   removeTodo(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${this.apiUrl}/${id}`);
   }

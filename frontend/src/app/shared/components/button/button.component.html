@@ -1,3 +1,10 @@
-<button (click)="handleClick()" [class]="buttonClass" class="button">
-  {{ label | translate }}
+<button
+  (click)="handleClick()"
+  [disabled]="disabled"
+  [class]="buttonClass"
+  [ngClass]="{ 'button--disabled': disabled }"
+  class="button"
+>
+  <span class="button__label">{{ label | translate }}</span>
+  <i *ngIf="icon" [class]="icon" class="button__icon"></i>
 </button>

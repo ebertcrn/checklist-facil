@@ -2,8 +2,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Todo } from '../../../../core/models/todo.model';
-import { ButtonTypeEnum } from '../../../../shared/components/button/button.enum';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
+import { TodoStatusType } from '../../enums/todo-status-type.enum';
+import { Icons } from '../../../../shared/enums/icons.enum';
 
 @Component({
   selector: 'app-todo-item',
@@ -13,14 +14,23 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
   styleUrls: ['./todo-item.component.scss'],
 })
 export class TodoItemComponent {
-  @Input({ required: true }) toDo!: Todo;
+  @Input({ required: true }) todo!: Todo;
 
-  @Output() removeTodo = new EventEmitter<number>();
+  @Output() handleTodo = new EventEmitter<{
+    id: number;
+    type: TodoStatusType;
+  }>();
 
-  readonly label = 'btnLabels.remove';
-  readonly type = ButtonTypeEnum.Remove;
+  readonly trashIcon = Icons.Trash;
+  readonly checkIcon = Icons.Check;
 
-  onRemove(id: number): void {
-    this.removeTodo.emit(id);
+  readonly completeLabel = 'btnLabels.complete';
+  readonly removeLabel = 'btnLabels.remove';
+
+  createType = TodoStatusType.Success;
+  removeType = TodoStatusType.Remove;
+
+  onHandleTodo(id: number, type: TodoStatusType): void {
+    this.handleTodo.emit({ id, type });
   }
 }

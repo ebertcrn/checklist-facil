@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonComponent } from './button.component';
-import { ButtonTypeEnum } from './button.enum';
+import { TodoStatusType } from './button.enum';
 import { By } from '@angular/platform-browser';
 
 describe('ButtonComponent', () => {
@@ -22,7 +22,7 @@ describe('ButtonComponent', () => {
   });
 
   it('should set button class to button--remove', () => {
-    const type = ButtonTypeEnum.Remove;
+    const type = TodoStatusType.Remove;
     component.type = type;
     component.ngOnInit();
 
@@ -30,7 +30,7 @@ describe('ButtonComponent', () => {
   });
 
   it('should set button class to button--create', () => {
-    const type = ButtonTypeEnum.Create;
+    const type = TodoStatusType.Create;
     component.type = type;
     component.ngOnInit();
 

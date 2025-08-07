@@ -4,6 +4,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 
 import { Todo } from '../../../../core/models/todo.model';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { TodoStatusType } from '../../enums/todo-status-type.enum';
 
 @Component({
   selector: 'app-todo-list',
@@ -13,13 +14,16 @@ import { TodoItemComponent } from '../todo-item/todo-item.component';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent {
-  @Input({ required: true }) toDos: Todo[] = [];
+  @Input({ required: true }) todos: Todo[] = [];
 
-  @Output() removeTodo = new EventEmitter<number>();
+  @Output() handleTodo = new EventEmitter<{
+    id: number;
+    type: TodoStatusType;
+  }>();
 
   readonly emptyList = 'emptyList';
 
-  onRemove(id: number): void {
-    this.removeTodo.emit(id);
+  onHandleTodo(id: number, type: TodoStatusType): void {
+    this.handleTodo.emit({ id, type });
   }
 }

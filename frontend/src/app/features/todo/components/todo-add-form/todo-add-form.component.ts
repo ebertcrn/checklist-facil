@@ -3,7 +3,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
-import { ButtonTypeEnum } from '../../../../shared/components/button/button.enum';
+import { TodoStatusType } from '../../enums/todo-status-type.enum';
+import { Icons } from '../../../../shared/enums/icons.enum';
 
 @Component({
   selector: 'app-todo-add-form',
@@ -15,17 +16,18 @@ import { ButtonTypeEnum } from '../../../../shared/components/button/button.enum
 export class TodoAddFormComponent {
   @Input({ required: true }) form!: FormGroup;
 
-  @Output() add = new EventEmitter<void>();
+  @Output() create = new EventEmitter<void>();
 
+  readonly addIcon = Icons.Add;
   readonly label = 'btnLabels.add';
-  readonly type = ButtonTypeEnum.Create;
+  readonly type = TodoStatusType.Success;
   readonly placeholder = 'addTodoPlaceholder';
 
   get titleControl(): FormControl<string> {
     return this.form.get('title') as FormControl<string>;
   }
 
-  addTodo(): void {
-    this.add.emit();
+  createTodo(): void {
+    this.create.emit();
   }
 }

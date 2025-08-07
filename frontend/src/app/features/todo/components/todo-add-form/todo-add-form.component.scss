@@ -5,15 +5,14 @@
 
   &__input {
     box-sizing: border-box;
-    padding: 8px;
-    width: 300px;
+    border-radius: 4px;
+    padding: 12px 8px;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 500px) {
   .todo-form {
-    flex-direction: column;
-
     &__input {
       width: 100%;
     }

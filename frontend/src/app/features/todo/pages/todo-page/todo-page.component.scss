@@ -2,10 +2,25 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 20px;
+  padding: 20px 40px;
 
   &__title,
   &__list-title {
     margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .todo-container {
+    padding: 10px;
+
+    &__title {
+      align-self: center;
+      font-size: 1.5em;
+    }
+
+    &__list-title {
+      font-size: 1.2em;
+    }
   }
 }
