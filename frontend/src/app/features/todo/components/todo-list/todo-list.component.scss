@@ -1,0 +1,19 @@
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__title {
+    margin: 10px 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &--empty {
+    color: gray;
+  }
+}

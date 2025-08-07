@@ -1,0 +1,19 @@
+.item {
+  align-items: center;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
+  &--completed {
+    text-decoration: line-through;
+  }
+
+  &__remove-btn {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+}

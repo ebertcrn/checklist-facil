@@ -1,0 +1,9 @@
+<form [formGroup]="form" class="todo-form">
+  <input
+    [formControl]="titleControl"
+    [placeholder]="placeholder"
+    class="todo-form__input"
+    type="text"
+  />
+  <button (click)="addTodo()" class="todo-form__button">Adicionar</button>
+</form>

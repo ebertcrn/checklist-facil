@@ -1,0 +1,5 @@
+<div class="todo-container">
+  <h1 class="todo-container__title">{{ title }}</h1>
+  <app-todo-add-form [form]="todoForm" (add)="addTodo()"></app-todo-add-form>
+  <app-todo-list [toDos]="toDos"></app-todo-list>
+</div>
