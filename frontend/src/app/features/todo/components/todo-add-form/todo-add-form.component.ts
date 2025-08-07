@@ -1,10 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
+import { ButtonTypeEnum } from '../../../../shared/components/button/button.enum';
+
 @Component({
   selector: 'app-todo-add-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ButtonComponent],
   templateUrl: './todo-add-form.component.html',
   styleUrls: ['./todo-add-form.component.scss'],
 })
@@ -13,6 +16,8 @@ export class TodoAddFormComponent implements OnInit {
 
   @Output() add = new EventEmitter<void>();
 
+  readonly label = 'Adicionar'; // ToDo: i18n
+  readonly type = ButtonTypeEnum.Create;
   readonly placeholder = 'Digite uma nova tarefa';
 
   ngOnInit(): void {}

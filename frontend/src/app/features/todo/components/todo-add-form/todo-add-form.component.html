@@ -5,5 +5,5 @@
     class="todo-form__input"
     type="text"
   />
-  <button (click)="addTodo()" class="todo-form__button">Adicionar</button>
+  <app-button [label]="label" [type]="type" (onClick)="addTodo()"></app-button>
 </form>

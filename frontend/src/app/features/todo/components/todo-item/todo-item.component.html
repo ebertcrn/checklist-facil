@@ -2,5 +2,9 @@
   <span [ngClass]="{ 'item--completed': toDo.completed }">
     {{ toDo.title }}
   </span>
-  <button (click)="onDelete(toDo.id)" class="item__remove-btn">Remover</button>
+  <app-button
+    [label]="label"
+    [type]="type"
+    (onClick)="onDelete(toDo.id)"
+  ></app-button>
 </div>

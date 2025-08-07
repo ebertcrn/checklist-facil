@@ -17,6 +17,7 @@ export class TodoListComponent {
   readonly title = 'Tarefas'; // ToDo: botar no i18n
 
   onDelete(id: number): void {
+    // ToDo: implementar delete
     console.log(`Deletar: `, id);
   }
 }

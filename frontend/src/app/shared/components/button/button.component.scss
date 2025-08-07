@@ -1,0 +1,15 @@
+.button {
+  border: none;
+  color: white;
+  cursor: pointer;
+  height: 100%;
+  padding: 8px 16px;
+
+  &--delete {
+    background-color: #f44336;
+  }
+
+  &--create {
+    background-color: #4caf50;
+  }
+}
