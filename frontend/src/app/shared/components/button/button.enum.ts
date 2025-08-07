@@ -1,4 +1,4 @@
 export enum ButtonTypeEnum {
-  Delete = 'delete',
+  Remove = 'remove',
   Create = 'create',
 }
