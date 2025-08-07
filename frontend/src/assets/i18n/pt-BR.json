@@ -5,11 +5,17 @@
   "emptyList": "Nenhuma tarefa encontrada.",
   "btnLabels": {
     "add": "Adicionar",
+    "complete": "Concluir",
     "remove": "Remover"
   },
   "errors": {
     "loadingTodos": "Erro ao carregar tarefas",
     "addingTodo": "Erro ao adicionar tarefa",
     "removeTodo": "Erro ao remover tarefa"
+  },
+  "messages": {
+    "todoAdded": "Tarefa adicionada com sucesso!",
+    "todoRemoved": "Tarefa removida com sucesso!",
+    "todoCompleted": "Tarefa concluída com sucesso!"
   }
 }

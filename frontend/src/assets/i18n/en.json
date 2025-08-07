@@ -1,3 +1,21 @@
 {
-  "title": "Todo List"
+  "title": "Todo List",
+  "listTitle": "Task List",
+  "addTodoPlaceholder": "Enter a new task",
+  "emptyList": "No tasks found.",
+  "btnLabels": {
+    "add": "Add",
+    "complete": "Complete",
+    "remove": "Remove"
+  },
+  "errors": {
+    "loadingTodos": "Error loading tasks",
+    "addingTodo": "Error adding task",
+    "removeTodo": "Error removing task"
+  },
+  "messages": {
+    "todoAdded": "Task added successfully!",
+    "todoRemoved": "Task removed successfully!",
+    "todoCompleted": "Task completed successfully!"
+  }
 }
