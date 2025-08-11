@@ -29,12 +29,12 @@ describe('ButtonComponent', () => {
     expect(component.buttonClass).toBe('button--remove');
   });
 
-  it('should set button class to button--create', () => {
+  it('should set button class to button--success', () => {
     const type = TodoStatusType.Success;
     component.type = type;
     component.ngOnInit();
 
-    expect(component.buttonClass).toBe('button--create');
+    expect(component.buttonClass).toBe('button--success');
   });
 
   it('should emit onClick when button is clicked', () => {
