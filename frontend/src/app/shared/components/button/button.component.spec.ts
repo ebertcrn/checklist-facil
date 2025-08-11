@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonComponent } from './button.component';
-import { TodoStatusType } from './button.enum';
+import { TodoStatusType } from '../../../features/todo/enums/todo-status-type.enum';
 import { By } from '@angular/platform-browser';
 
 describe('ButtonComponent', () => {
@@ -30,7 +30,7 @@ describe('ButtonComponent', () => {
   });
 
   it('should set button class to button--create', () => {
-    const type = TodoStatusType.Create;
+    const type = TodoStatusType.Success;
     component.type = type;
     component.ngOnInit();
 
